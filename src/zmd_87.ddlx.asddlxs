@@ -1,0 +1,54 @@
+@Metadata.layer: #CORE
+@UI:{ headerInfo:{ typeName : 'ATEAM',
+typeNamePlural: 'Ateam',
+title:{ type: #STANDARD, label:'Ateam',value: 'id'}},
+presentationVariant:[{ sortOrder: [ {by: 'id',direction:#ASC } ]}]
+}
+annotate view ZCV_87
+    with 
+{
+    @UI.facet:[ { id: 'systemchoice',
+    purpose: #STANDARD,
+    type:#IDENTIFICATION_REFERENCE,
+    label: 'SYSTEM',
+    position: 10 
+  } ]
+  @UI:{ identification:[{ position:1 ,label:'id' }] 
+  }
+  Id;
+  @UI:{ lineItem:[ { position:30 } ] ,
+  identification:[ { position:30 } ],
+  selectionField:[ { position:30 } ]
+  }
+  Firstname;
+  @UI:{ lineItem:[ { position:40 } ] ,
+  identification:[ { position:40 } ]
+  }
+  Lastname;
+  @UI:{ lineItem:[ { position:50 } ] ,
+  identification:[ { position:50 } ]
+  }
+  Age;
+  @UI:{ lineItem:[ { position:30 } ] ,
+  identification:[ { position:30 } ],
+  selectionField:[ { position:30 } ]
+  }
+  Role;
+  @UI:{ lineItem:[ { position:30 } ] ,
+  identification:[ { position:30 } ],
+  selectionField:[ { position:30 } ]
+  }
+  Salary;
+  @UI:{ lineItem:[ { position:70 } ,{ type:#FOR_ACTION,
+  dataAction:'SetActive',   label:'setAvtive' }]
+  }
+  Active;
+  @UI.hidden:true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  
+  
+  
+    
+}

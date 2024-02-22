@@ -1,0 +1,4 @@
+@EndUserText.label: 'service defination'
+define service ZSD_87 {
+  expose ZCV_87 as VTEAM;
+}

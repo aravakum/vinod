@@ -1,0 +1,38 @@
+managed implementation in class zbp_iv_vk001 unique;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+//with draft;
+define behavior for ZIV_87 alias VTEAM
+persistent table ZDb_87
+lock master
+//total etag LastchangedAt
+//etag master local lastchangedAt
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field(numbering:managed,readonly)id;
+  field(readonly) active ,salary;
+  field(readonly) lastchangedat,locallastchangedat;
+
+  action(features:instance) setactive result[1] $self;
+  determination changesalary on save{field role;}
+  validation validationAge on save {field age;create;}
+
+  mapping for Zdb_87
+  {
+  Id = id;
+    FirstName = firstName;
+    LastName = lastName;
+    Age = age;
+    Role = role;
+    Salary = salary;
+    Active = active;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+}
+
+}
